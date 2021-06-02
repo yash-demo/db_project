@@ -17,11 +17,7 @@ pipeline {
             git credentialsId: 'GitHub', url: "https://github.com/${ORGANIZATION_NAME}/${SERVICE_NAME}"
          }
       }
-      stage('Build') {
-         steps {
-            sh 'echo No build required for Webapp.'
-         }
-      }
+     
 
       stage('Build and Push Image') {
          steps {
