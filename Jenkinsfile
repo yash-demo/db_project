@@ -10,10 +10,7 @@ pipeline {
      REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
    }
    kubernetes {
-      label "my-jenkins-slave"
-      defaultContainer "jnlp"
       yaml """
-      ---
 apiVersion: v1
 kind: Pod
 metadata:
@@ -50,7 +47,7 @@ spec:
   volumes:
     - name: dind-storage
       emptyDir: {}
-      
+"""      
   }
    
    stages {
