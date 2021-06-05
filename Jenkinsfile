@@ -15,7 +15,13 @@ pipeline {
       
       stage('Deploy') {
           steps {
-            sh 'envsubst < ${WORKSPACE}/deploy1.yaml | kubectl apply -f -'
+            sh 'kubectl version'
+          }
+      }
+      
+      stage('Deploy1') {
+          steps {
+            sh 'docker version'
           }
       }
       stage('Preparation') {
