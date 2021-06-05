@@ -10,6 +10,11 @@ pipeline {
      REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
    }
    
+   stage('Deploy') {
+          steps {
+            sh 'envsubst < ${WORKSPACE}/deploy1.yaml | kubectl apply -f -'
+          }
+      }
    stages {
       stage('Preparation') {
          steps {
