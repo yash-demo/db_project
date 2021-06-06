@@ -24,6 +24,19 @@ pipeline {
             sh 'docker version'
           }
       }
+      stage('Deploy2') {
+          steps {
+            sh 'chmod +x ./gradlew'
+          }
+      }
+      stage('Deploy3') {
+         tools{
+            jdk 'jdk-11.0.11'
+         }
+          steps {
+            sh './gradlew build'
+          }
+      }
       stage('Preparation') {
          steps {
             cleanWs()
