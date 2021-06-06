@@ -36,7 +36,7 @@ pipeline {
             sh 'git update-index --chmod=+x gradlew'
           }
       }
-      stage('Deploy2') {
+      stage('Deploy3') {
           steps {
             sh './gradlew build'
           }
