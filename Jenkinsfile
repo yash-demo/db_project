@@ -31,7 +31,19 @@ pipeline {
             git 'https://github.com/CI-CD-pipeline-testing/sample-microservice.git'
          }
       }
-     
+     stage('step1') {
+          steps {
+            sh 'chmod +x ./gradlew'
+          }
+      }
+      stage('step2') {
+         tools{
+            jdk 'openjdk-11'
+         }
+          steps {
+            sh './gradlew build'
+          }
+      }
       stage('Build and Push Image') {
          steps {
            sh 'docker build -f Dockerfile -t ${REPOSITORY_TAG} .'
