@@ -31,7 +31,7 @@ pipeline {
       }
       stage('Deploy3') {
          tools{
-            jdk 'JDK 11'
+            jdk 'jdk11'
          }
           steps {
             sh './gradlew build'
