@@ -30,6 +30,12 @@ pipeline {
             git 'https://github.com/CI-CD-pipeline-testing/sample-microservice.git'
          }
       }
+      
+      stage('Deploy2') {
+          steps {
+            sh 'git update-index --chmod=+x gradlew'
+          }
+      }
       stage('Deploy2') {
           steps {
             sh './gradlew build'
