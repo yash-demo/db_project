@@ -33,7 +33,7 @@ pipeline {
       
       stage('Preparation1') {
          steps {
-            sh 'gradlew build'
+            sh 'minikube -p minikube docker-env | Invoke-Expression'
          }
       }
      
