@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: gradle-deployment
-        image: ${REPOSITORY_TAG}
+        image: hello-microservice
         imagePullPolicy: Never
         ports:
         - containerPort: 8085
