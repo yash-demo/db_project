@@ -30,17 +30,6 @@ pipeline {
             git 'https://github.com/CI-CD-pipeline-testing/sample-microservice.git'
          }
       }
-      
-      stage('Deploy2') {
-          steps {
-            sh 'chmod +x ./gradlew'
-          }
-      }
-      stage('Deploy3') {
-          steps {
-            sh './gradlew build'
-          }
-      }
      
       stage('Build and Push Image') {
          steps {
