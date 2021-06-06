@@ -13,30 +13,18 @@ pipeline {
    
    stages {
       
-      stage('Deploy') {
+      stage('check1') {
           steps {
             sh 'kubectl version'
           }
       }
       
-      stage('Deploy1') {
+      stage('check2') {
           steps {
             sh 'docker version'
           }
       }
-      stage('Deploy2') {
-          steps {
-            sh 'chmod +x ./gradlew'
-          }
-      }
-      stage('Deploy3') {
-         tools{
-            jdk 'openjdk-11'
-         }
-          steps {
-            sh './gradlew build'
-          }
-      }
+      
       stage('Preparation') {
          steps {
             cleanWs()
