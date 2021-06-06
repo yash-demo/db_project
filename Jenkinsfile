@@ -30,12 +30,7 @@ pipeline {
             git 'https://github.com/CI-CD-pipeline-testing/sample-microservice.git'
          }
       }
-      
-      stage('Preparation1') {
-         steps {
-            sh 'gradlew build'
-         }
-      }
+     
      
       stage('Build and Push Image') {
          steps {
