@@ -20,7 +20,7 @@ spec:
         image: pipeline-testing-sample-microservice:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 8088
+        - containerPort: 8089
 
 ---
 apiVersion: v1
@@ -33,9 +33,9 @@ spec:
     app: gradle-deployment  
   ports:
     - protocol: TCP
-      port: 8088
-      targetPort: 8088
-      nodePort: 30081
+      port: 8089
+      targetPort: 8089
+      nodePort: 30089
 
   type: NodePort
       
