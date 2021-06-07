@@ -31,7 +31,7 @@ pipeline {
             git 'https://github.com/CI-CD-pipeline-testing/sample-microservice.git'
          }
       }
-      stage('Deploy to Cluster') {
+      stage('Deploy to Cluster1') {
           steps {
             sh 'kubectl apply -f deploy1.yaml'
           }
