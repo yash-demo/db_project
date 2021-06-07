@@ -30,11 +30,6 @@ pipeline {
             sh './gradlew build'
           }
       }
-      stage('Delete image') {
-          steps {
-            sh 'docker rmi pipeline-testing-sample-microservice:latest'
-          }
-      }
        
       stage('Build Image') {
          steps {
