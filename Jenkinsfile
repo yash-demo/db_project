@@ -7,7 +7,7 @@ pipeline {
      // YOUR_DOCKERHUB_USERNAME (it doesn't matter if you don't have one)
      
      SERVICE_NAME = "sample-microservice"
-     REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:latest"
+     REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:v1"
    }
    
    
