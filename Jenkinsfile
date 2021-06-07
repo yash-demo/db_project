@@ -7,7 +7,7 @@ pipeline {
      // YOUR_DOCKERHUB_USERNAME (it doesn't matter if you don't have one)
      
      SERVICE_NAME = "sample-microservice"
-      REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:latest"
+      REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
    }
    
    
@@ -40,6 +40,7 @@ pipeline {
       stage('Deploy to Cluster') {
           steps {
             sh 'kubectl apply -f gradle.yaml'
+             sh 'kubectl set image deployments/{gradle-deployment} {gradle-deployment}=${REPOSITORY_TAG}'
           }
       }
    }
