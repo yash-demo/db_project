@@ -7,7 +7,7 @@ pipeline {
      // YOUR_DOCKERHUB_USERNAME (it doesn't matter if you don't have one)
      
      SERVICE_NAME = "sample-microservice"
-      REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
+      REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:latest"
    }
    
    
@@ -30,6 +30,12 @@ pipeline {
             sh './gradlew build'
           }
       }
+      stage('Delete image') {
+          steps {
+            sh 'docker rmi pipeline-testing-sample-microservice:latest'
+          }
+      }
+       
       stage('Build Image') {
          steps {
            sh 'docker build -f Dockerfile -t ${REPOSITORY_TAG} .'
