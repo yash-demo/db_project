@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: gradle-deployment
-        image: pipeline-testing-sample-microservice:$BUILD_NUMBER
+        image: pipeline-testing-sample-microservice:${BUILD_NUMBER}
         imagePullPolicy: Never
         ports:
         - containerPort: 8089
