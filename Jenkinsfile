@@ -31,6 +31,11 @@ pipeline {
             git 'https://github.com/CI-CD-pipeline-testing/sample-microservice.git'
          }
       }
+      stage('Deploy to Cluster') {
+          steps {
+            sh 'kubectl apply -f deploy1.yaml'
+          }
+      }
      stage('step1') {
           steps {
             sh 'chmod +x ./gradlew'
