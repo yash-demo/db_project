@@ -20,17 +20,17 @@ pipeline {
          }
       }
       
-     stage('step1') {
+     stage('Permission') {
           steps {
             sh 'chmod +x ./gradlew'
           }
       }
-      stage('step2') {
+      stage('Build Jar') {
           steps {
             sh './gradlew build'
           }
       }
-      stage('Build and Push Image') {
+      stage('Build Image') {
          steps {
            sh 'docker build -f Dockerfile -t ${REPOSITORY_TAG} .'
          }
