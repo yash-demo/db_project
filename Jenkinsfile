@@ -12,32 +12,14 @@ pipeline {
    
    
    stages {
-      
-      stage('check1') {
-          steps {
-            sh 'kubectl version'
-          }
-      }
-      
-      stage('check2') {
-          steps {
-            sh 'docker images'
-          }
-      }
-      
+     
       stage('Preparation') {
          steps {
             cleanWs()
             git 'https://github.com/CI-CD-pipeline-testing/sample-microservice.git'
          }
       }
-      stage('Deploy to Cluster1') {
-          steps {
-             
-             sh 'minikube docker-env | Invoke-Expression'
-             
-          }
-      }
+      
      stage('step1') {
           steps {
             sh 'chmod +x ./gradlew'
