@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: gradle-deployment
-        image: 
+        image: ${REPOSITORY_TAG} 
         imagePullPolicy: Never
         ports:
         - containerPort: 8089
