@@ -1,3 +1,12 @@
+environment {
+     // You must set the following environment variables
+     // ORGANIZATION_NAME
+     // YOUR_DOCKERHUB_USERNAME (it doesn't matter if you don't have one)
+     
+     SERVICE_NAME = "sample-microservice"
+      REPOSITORY_TAG="${ORGANIZATION_NAME}-${SERVICE_NAME}:${BUILD_ID}"
+   }
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,7 +26,7 @@ spec:
     spec:
       containers:
       - name: gradle-deployment
-        image: pipeline-testing-sample-microservice:latest
+        image: ${REPOSITORY_TAG}
         imagePullPolicy: Never
         ports:
         - containerPort: 8089
