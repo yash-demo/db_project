@@ -21,7 +21,7 @@ pipeline {
       
       stage('check2') {
           steps {
-            sh 'docker version'
+            sh 'docker images'
           }
       }
       
