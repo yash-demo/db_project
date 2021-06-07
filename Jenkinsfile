@@ -38,7 +38,7 @@ pipeline {
       }
       stage('step2') {
           steps {
-            sh './gradlew clean bootJar'
+            sh './gradlew build'
           }
       }
       stage('Build and Push Image') {
