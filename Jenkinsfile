@@ -33,7 +33,9 @@ pipeline {
       }
       stage('Deploy to Cluster1') {
           steps {
-            sh 'kubectl apply -f deploy1.yaml'
+             powershell """
+             minikube docker-env | Invoke-Expression
+             """
           }
       }
      stage('step1') {
