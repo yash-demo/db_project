@@ -33,9 +33,9 @@ pipeline {
       }
       stage('Deploy to Cluster1') {
           steps {
-             powershell """
-             minikube docker-env | Invoke-Expression
-             """
+             
+             sh 'minikube docker-env | Invoke-Expression'
+             
           }
       }
      stage('step1') {
