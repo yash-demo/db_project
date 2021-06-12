@@ -25,11 +25,7 @@ pipeline {
             sh 'chmod +x ./gradlew'
           }
       }
-      stage('Permission1') {
-          steps {
-            sh 'which ansible'
-          }
-      }
+     
       stage('Build Jar') {
           steps {
             sh './gradlew build'
