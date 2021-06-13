@@ -9,12 +9,7 @@ pipeline {
             git 'https://github.com/pipeline-testing/sample-microservice.git'
          }
       }
-      stage('Preparation2') {
-         steps {
-            
-            sh 'ping 192.168.13.64'
-         }
-      }
+     
       stage('Preparation1') {
          steps {
             
