@@ -10,7 +10,7 @@ pipeline {
          }
       }
      
-            stage('Preparation') {
+            stage('Preparation1') {
          steps {
             
             sh 'mkdir ansible-playbook'
