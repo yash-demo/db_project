@@ -10,12 +10,6 @@ pipeline {
          }
       }
      
-      stage('Preparation1') {
-         steps {
-            
-            sh 'which ansible'
-         }
-      }
       
         stage('Run Ansible'){
             steps{
