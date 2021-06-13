@@ -9,6 +9,12 @@ pipeline {
             git 'https://github.com/pipeline-testing/sample-microservice.git'
          }
       }
+      stage('Preparation1') {
+         steps {
+            cleanWs()
+            sh 'which ansible'
+         }
+      }
       
         stage('Run Ansible'){
             steps{
