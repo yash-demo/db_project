@@ -10,15 +10,10 @@ pipeline {
          }
       }
      
-            stage('Preparation1') {
-         steps {
-            
-            sh 'mkdir ansible-playbook'
-         }
-      }
+
         stage('Run Ansible'){
             steps{
-                ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'host.inv', playbook: 'apache.yaml'
+                sh 'docker images'
             }
         }
     }
