@@ -1,8 +1,4 @@
----
-- name: This is a hello-world example
-  hosts: localhost
-  tasks:
-    - name: Get pods
-      community.kubernetes.k8s_info:
-        kind: Pod
-      register: pod_list
+- name: Get pods
+  community.kubernetes.k8s_info:
+      kind: Pod
+  register: pod_list
