@@ -1,8 +1,7 @@
 ---
 - name: This is a hello-world example
   hosts: localhost
-  tasks:
-    - name: Create a file called '/tmp/test.txt' with the content 'hello world'.
-      copy:
-        content: hello worldn
-        dest: tmp/hello/test.txt
+  - name: Get a list of all pods from any namespace
+    community.kubernetes.k8s_info:
+      kind: Pod
+    register: pod_list
