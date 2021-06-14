@@ -12,8 +12,15 @@ pipeline {
      
 
         stage('Run Ansible'){
+           agent{
+              docker {
+                 image 'ansible_main_ansible'
+                 reuseNode true
+              }
+                 
+           }
             steps{
-                sh 'docker images'
+                sh 'ansible --version'
             }
         }
     }
