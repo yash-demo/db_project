@@ -5,4 +5,4 @@
     - name: Create a file called '/tmp/test.txt' with the content 'hello world'.
       copy:
         content: hello worldn
-        dest: /hello/test.txt
+        dest: tmp/hello/test.txt
