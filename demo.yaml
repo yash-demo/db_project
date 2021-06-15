@@ -1,4 +1,4 @@
-- hosts: 192.168.120.140
+- hosts: 192.168.13.64
   gather_facts: 'false'
   tasks:
    - name: Create a k8s namespace
