@@ -7,7 +7,7 @@
       k8s:
         kubeconfig: '~/config'
         state: present
-     - name: Get a list of all pods from any namespace
-       k8s_facts:
+    - name: Get a list of all pods from any namespace
+      k8s_facts:
         kind: Pod
-       register: pod_list
+      register: pod_list
