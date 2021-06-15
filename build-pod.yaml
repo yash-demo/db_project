@@ -10,8 +10,11 @@ spec:
       imagePullPolicy: Always # use cache or pull image for agent
       resources:  # limits the resources your build contaienr
         requests:
-          memory: "16Gi"
-          cpu: "1000m"
+          memory: "8Gi"
+          cpu: "500m"
         limits:
-          memory: "16Gi"
-
+          memory: "8Gi"
+  volumes:
+    - name: docker
+      hostPath:
+        path: /var/run/docker.sock
