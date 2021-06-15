@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+spec:
+  containers:  # list of containers that you want present for your build, you can define a default container in the Jenkinsfile
+    - name: ansible
+      image: ansible_main_ansible
+      command: ["tail", "-f", "/dev/null"]  # this or any command that is bascially a noop is required, this is so that you don't overwrite the entrypoint of the base container
+      imagePullPolicy: Always # use cache or pull image for agent
+      resources:  # limits the resources your build contaienr
+        requests:
+          memory: "4Gi"
+          cpu: "500m"
+        limits:
+          memory: "4Gi"
+    - name: jnlp-slave
+      image: jenkins/jnlp-slave
+      command: ["tail", "-f", "/dev/null"]
+      imagePullPolicy: Always
+      args: ['\$(JENKINS_SECRET)', '\$(JENKINS_NAME)']
