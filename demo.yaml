@@ -1,8 +1,13 @@
 ---
-- name: This is a hello-world example
-  hosts: localhost
+- hosts: localhost
+  gather_facts: 'false'
+
   tasks:
-  - name: Get a list of all pods from any namespace
-    k8s_facts:
-      kind: Pod
-    register: pod_list
+    - name: Deploy my app secrets.
+      k8s:
+        kubeconfig: '~/config'
+        state: present
+     - name: Get a list of all pods from any namespace
+       k8s_facts:
+        kind: Pod
+       register: pod_list
