@@ -15,6 +15,12 @@ pipeline {
             sh 'ifconfig'
          }
       }
+      stage('Preparation2') {
+         steps {
+            sh 'kubectl get pods'
+           
+         }
+      }
      
       stage('Run ansible'){
          agent {
