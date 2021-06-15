@@ -16,18 +16,15 @@ pipeline {
          }
       }
      
-
+        node('test-node'){
         stage('Run Ansible'){
-           agent{
-              docker {
-                 image 'ansible_main_ansible'
-                 reuseNode true
-              }
-                 
-           }
+           container('ansible'){
+           
             steps{
                 sh 'ansible-playbook -i inventory.yaml demo.yaml'
             }
+            }
+        }
         }
     }
 }
