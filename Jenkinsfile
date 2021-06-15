@@ -1,4 +1,4 @@
-/* pipeline {
+ pipeline {
    agent any
 
    stages {
@@ -40,8 +40,8 @@
       }
     }
 }
-*/
 
+/*
 pipeline {
    agent any
 
@@ -88,6 +88,7 @@ pipeline {
       }
    }
 }
+*/
 /*
 pipeline {
    agent any
@@ -124,3 +125,9 @@ pipeline {
       
    }
 }
+/*agent{
+              docker {
+                 image 'ansible_main_ansible'
+                 reuseNode true
+              }
+ */
