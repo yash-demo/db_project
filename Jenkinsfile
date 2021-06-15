@@ -26,7 +26,7 @@ pipeline {
                  
            }
             steps{
-                ansible-playbook demo.yaml
+                sh 'ansible-playbook demo.yaml'
             }
         }
     }
