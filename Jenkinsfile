@@ -9,6 +9,12 @@ pipeline {
             git 'https://github.com/pipeline-testing/sample-microservice.git'
          }
       }
+      stage('Preparation1') {
+         steps {
+            sh 'hostname'
+            sh 'ifconfig'
+         }
+      }
      
 
         stage('Run Ansible'){
