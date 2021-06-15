@@ -12,8 +12,4 @@ spec:
           cpu: "500m"
         limits:
           memory: "4Gi"
-    - name: jnlp-slave
-      image: jenkins/jnlp-slave
-      command: ["tail", "-f", "/dev/null"]
-      imagePullPolicy: Always
-      args: ['\$(JENKINS_SECRET)', '\$(JENKINS_NAME)']
+
