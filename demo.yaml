@@ -1,9 +1,0 @@
-- hosts: localhost
-  gather_facts: 'false'
-  tasks:
-  - name: Get a list of all service objects
-    k8s:
-      api_version: v1
-      kind: Service
-      namespace: jenkins
-    register: service_list
