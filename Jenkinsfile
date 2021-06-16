@@ -16,7 +16,7 @@ pipeline {
       stage('Preparation') {
          steps {
             cleanWs()
-            git 'https://github.com/CI-CD-pipeline-testing/microservice.git'
+            git 'https://github.com/pipeline-testing/microservice.git'
          }
       }
       
