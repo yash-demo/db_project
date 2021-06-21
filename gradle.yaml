@@ -1,3 +1,4 @@
+  
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -20,7 +21,7 @@ spec:
         image: ${REPOSITORY_TAG} 
         imagePullPolicy: Never
         ports:
-        - containerPort: 8086
+        - containerPort: 8089
 
 ---
 apiVersion: v1
@@ -30,12 +31,11 @@ metadata:
   namespace: jenkins
 spec:
   selector:
-    app: gradle-deployment
+    app: gradle-deployment  
   ports:
     - protocol: TCP
-      port: 8086
-      targetPort: 8086
+      port: 8089
+      targetPort: 8089
       nodePort: 30083
 
   type: NodePort
-      
