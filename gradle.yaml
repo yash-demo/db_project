@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: gradle-deployment1
+  name: gradle-deployment
   namespace: jenkins
   labels:
-    app: gradle-deployment1
+    app: gradle-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: gradle-deployment1
+      app: gradle-deployment
   template:
     metadata:
       labels:
-        app: gradle-deployment1
+        app: gradle-deployment
     spec:
       containers:
-      - name: gradle-deployment1
+      - name: gradle-deployment
         image: ${REPOSITORY_TAG} 
         imagePullPolicy: Never
         ports:
@@ -26,16 +26,16 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: gradle-service1
+  name: gradle-service
   namespace: jenkins
 spec:
   selector:
-    app: gradle-deployment1
+    app: gradle-deployment
   ports:
     - protocol: TCP
       port: 8086
       targetPort: 8086
-      nodePort: 30086
+      nodePort: 30083
 
   type: NodePort
       
