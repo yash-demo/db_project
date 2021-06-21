@@ -39,7 +39,7 @@ pipeline {
       stage('Deploy to Cluster') {
           steps {
             sh 'kubectl apply -f gradle.yaml'
-             sh 'kubectl set image deployments/gradle-deployment1 gradle-deployment1=${REPOSITORY_TAG} -n jenkins'
+             sh 'kubectl set image deployments/gradle-deployment gradle-deployment=${REPOSITORY_TAG} -n jenkins'
           }
       }
    }
