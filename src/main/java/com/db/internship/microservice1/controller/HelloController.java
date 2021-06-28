@@ -10,6 +10,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String getMessage() {
-        return "Hello! from microservice-2";
+        return "Hello! from microservice-3";
     }
 }
