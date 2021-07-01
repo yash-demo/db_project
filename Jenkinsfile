@@ -39,7 +39,7 @@ pipeline {
       
       stage('Build Jar') {
           steps {
-            sh './application/gradlew build -p ./application'
+            sh './gradlew build '
           }
       }
 
