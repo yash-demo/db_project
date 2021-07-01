@@ -5,8 +5,8 @@
   vars:
        image_name: "{{ image }}"
        replicas: 1
-       Port: 8086
-       NodePort: 30086
+       Port: 8087
+       NodePort: 30087
        label: hello
        Namespace: project1-dev
        deployment_name: hello
@@ -36,11 +36,7 @@
 
       - name: Run cluster-deployment role 
         include_role:
-          name:  cluster-deployment
-
-      - name: Run ingress-service role 
-        include_role:
-          name: ingress-service        
+          name:  cluster-deployment        
 
       - name: Run pod-status role 
         include_role:
