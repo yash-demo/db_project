@@ -1,0 +1,48 @@
+  
+---
+- name: Deploy a microservice to kubernetes cluster
+  hosts: localhost
+  vars:
+       image_name: "{{ image }}"
+       replicas: 1
+       Port: 8086
+       NodePort: 30086
+       label: hello
+       Namespace: project1-dev
+       deployment_name: hello
+       container_name: hello
+       service_name: hello-service
+       ingress_name: ingress-microservice
+       host_name: microservice.com
+       jar_path: ./artifactory/microservice1-0.0.1-SNAPSHOT.jar
+       kube_config: ./kube_config/config
+       context: minikube
+
+  collections:
+    - kubernetes.core
+    
+  tasks:
+
+
+      - name: Run copy-jar role to copy jar files to artifactory
+        include_role:
+          name:  copy-jar
+
+
+      - name: Run docker-image role to build an image
+        include_role:
+          name:  docker-image
+
+
+      - name: Run cluster-deployment role 
+        include_role:
+          name:  cluster-deployment
+
+      - name: Run ingress-service role 
+        include_role:
+          name: ingress-service        
+
+      - name: Run pod-status role 
+        include_role:
+          name:  pod-status
+          
