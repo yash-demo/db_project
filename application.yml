@@ -3,7 +3,7 @@
   hosts: localhost
   vars:
     repo: https://github.com/pipeline-testing/microservice.git
-    Port: 8086
+    Port: 8087
 
   tasks:
           
