@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ deployment_name }}
+  namespace: {{ namespace }}
+spec:
+  replicas: {{ replicas }}
+  selector:
+    matchLabels:
+      app: {{ label }}
+  template:
+    metadata:
+      labels:
+        app: {{ label }}
+    spec:
+      containers:
+      - name: {{ container_name }}
+        image: {{ image_name }}
+        imagePullPolicy: IfNotPresent
+        ports:
+              - containerPort: {{ port }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ service_name }}
+  namespace: {{ namespace }}
+spec:
+  selector:
+    app: {{ label }} 
+  ports:
+    - protocol: TCP
+      port: {{ port }}
+      targetPort: {{ port }}
+      nodePort: {{ NodePort }}
+
+  type: NodePort
+
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ ingress_name }}
+  namespace: {{ namespace }}
+spec:
+  rules:
+    - host: {{ host_name }}
+      http:
+        paths:
+        - backend:
+            serviceName: {{ service_name }}
+            servicePort: {{ port }}

@@ -1,0 +1,1 @@
+This folder contains common templates used for deployment.

@@ -1,0 +1,1 @@
+This folder contains your cluster certificates and config files.

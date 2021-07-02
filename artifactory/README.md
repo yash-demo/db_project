@@ -1,0 +1,1 @@
+This folder contains artifactory of the project.

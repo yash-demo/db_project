@@ -1,12 +1,11 @@
 ---
-- name: Clone a microservice repo
+- name: Set application properties.
   hosts: localhost
   vars:
-    repo: https://github.com/pipeline-testing/microservice.git
-    Port: 8087
+    port: 8089
 
   tasks:
           
-      - name: Run set-port role to change the application-properties
+      - name: Run set-properties role to change the application-properties
         include_role:
-          name:  set-port          
+          name:  set-properties         
