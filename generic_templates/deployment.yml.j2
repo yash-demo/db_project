@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: {{ container_name }}
-        image: ghkkkd
+        image: {{ image_name }}
         imagePullPolicy: IfNotPresent
         ports:
               - containerPort: {{ port }}
