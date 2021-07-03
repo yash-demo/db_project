@@ -2,7 +2,7 @@
 - name: Set application properties.
   hosts: localhost
   vars:
-    port: 8089
+    port: 8083
 
   tasks:
           
