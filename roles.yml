@@ -45,9 +45,6 @@
           name:  cluster-deployment   
           
        
-      - name: Pause
-        pause:
-           seconds: 0
 
       - name: Run pod-status role 
         include_role:
