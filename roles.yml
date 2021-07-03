@@ -5,8 +5,8 @@
   vars:
        image_name: "{{ image }}"
        replicas: 1
-       port: 8089
-       NodePort: 30087
+       port: 8083
+       NodePort: 30083
        label: hello
        namespace: project1-dev
        deployment_name: hello
