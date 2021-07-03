@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: {{ container_name }}
-        image: ghjj
+        image: {{ image_name }}
         imagePullPolicy: IfNotPresent
         ports:
               - containerPort: {{ port }}
