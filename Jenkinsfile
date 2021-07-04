@@ -15,7 +15,7 @@ pipeline {
       stage('Preparation') {
          steps {
             cleanWs()
-            git credentialsId: 'GitHub', url: 'https://github.com/pipeline-testing/microservice.git'  
+            git credentialsId: 'GitHub', url: 'https://github.com/yash-demo/db_project.git'  
             sh 'git submodule update --init --recursive'           
          }
       }
